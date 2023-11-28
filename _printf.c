@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
                 str = va_arg(ap, char *);
                 if (str == NULL)
                 {
-                    // Do nothing for NULL strings
+
                 }
                 else
                 {
