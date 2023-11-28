@@ -38,11 +38,11 @@ int _printf(const char *format, ...)
 			{
 				if (format[i + 1] == '%')
 				{
-			{
+
 				ch = '%';
 				len += write(1, &ch, 1);
 				i++;
-			}
+				}
 			else
 			{
 				ch = '%';
