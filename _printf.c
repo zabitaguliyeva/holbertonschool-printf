@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include <stdlib.h>
 #include <unistd.h>
 
 /**
@@ -8,7 +9,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, j, len = 0, str_len = 0;
+	int i, len = 0, str_len = 0;
 	char ch;
 	char *str;
 	va_list ap;
