@@ -56,7 +56,7 @@ int _printf(const char *format, ...)
 			ch =format[i];
 			len += write(1, &ch, 1);
 		}
-	}
+	
 	va_end(ap);
 	return len;
 }
