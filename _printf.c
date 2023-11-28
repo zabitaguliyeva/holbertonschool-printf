@@ -36,8 +36,12 @@ int _printf(const char *format, ...)
 			}
 			else if (format [i] == '%')
 			{
+				if (format[i + 1] == '%')
+				{
+			{
 				ch = '%';
 				len += write(1, &ch, 1);
+				i++;
 			}
 			else
 			{
