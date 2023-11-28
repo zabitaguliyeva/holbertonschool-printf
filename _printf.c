@@ -8,48 +8,46 @@
  */
 int _printf(const char *format, ...)
 {
-    int i, j, len = 0;
-    char ch;
-    char *str;
-    va_list ap;
+	int i, j, len = 0, str_len = 0;
+	char ch;
+	char *str;
+	va_list ap;
 
-    va_start(ap, format);
-    for (i = 0; format[i] != '\0'; i++)
-    {
-        for (; format[i] != '%' && format[i] != '\0'; i++)
-        {
-            write(1, &format[i], 1);
-            len++;
-        }
-        if (format[i] == '%')
-        {
-            i++;
-            if (format[i] == 'c')
-            {
-                ch = va_arg(ap, int);
-                write(1, &ch, 1);
-                len++;
-            }
-            if (format[i] == 's')
-            {
-                str = va_arg(ap, char *);
-                if (str == NULL)
-                {
+	va_start(ap, format);
+	for (i = 0; format[i] != '\0'; i++)
+	{
+		if (format[i] == '%')
+		{
+			i++;
+			if (format[i] == 'c')
+			{
+				ch = va_arg(ap, int);
+				len += write(1, &ch, 1);
+			}
+			if (format[i] == 's')
+			{
+				str_len = 0;
+				str = va_arg(ap, char *);
+				if (str == NULL)
+					str = "(null)";
+				while (str)
+					str_len++;
+				len += write(1, str, strlen);
+			}
+			if (format[i] == '%')
+			{
+				ch = '%';
+				len += write(1, &ch, 1);
+			}
+		}
+		else
+		{
+			ch = va_arg(ap, int);
+			len += write(1, &ch, 1);
+		}
+	}
 
-                }
-                else
-                {
-                    for (j = 0; str[j] != '\0'; j++)
-                    {
-                        write(1, &str[j], 1);
-                        len++;
-                    }
-                }
-            }
-        }
-    }
-
-    va_end(ap);
-    return len;
+	va_end(ap);
+	return (len);
 }
 
