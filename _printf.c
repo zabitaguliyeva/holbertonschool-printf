@@ -1,3 +1,6 @@
+#include <stdarg.h>
+#include <unistd.h>
+
 /**
  *_printf - Is a function that produces output according to a format.
  * @format: Is a character string.
@@ -5,5 +8,35 @@
  */
 int _printf(const char *format, ...)
 {
-	
+	int i, j;
+	char ch;
+	char *str;
+	va_list ap;
+
+	va_start(ap, format);
+	for (i = 0; *(format + i) != '\0'; i++)
+	{
+		for (; format[i] != '%' && format[i] != '\0'; i++)
+		{
+			write(1, &format[i], 1);
+		}
+		if (format[i] == '%')
+		{
+			i++;
+			if (format[i] == 'c')
+			{
+				ch = va_arg(ap, int);
+				write(1, &ch, 1);
+			}
+			if (format[i] == 's')
+			{
+				str = va_arg(ap, char *);
+				for (j = 0; str[j] != '\0'; j++)
+					write(1, &str[j], 1);
+			}
+		}
+	}
+
+	va_end(ap);
+	return (i);
 }
