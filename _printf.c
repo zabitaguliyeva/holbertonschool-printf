@@ -16,11 +16,6 @@ int _printf(const char *format, ...)
     va_start(ap, format);
     for (i = 0; format[i] != '\0'; i++)
     {
-	if (format[i] == '\n')
-        {
-            write(1, "\n", 1);
-            len++;
-        }
         for (; format[i] != '%' && format[i] != '\0'; i++)
         {
             write(1, &format[i], 1);
