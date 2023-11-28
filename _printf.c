@@ -13,6 +13,11 @@ int _printf(const char *format, ...)
 	char *str;
 	va_list ap;
 
+	if (!format)
+		exit(60);
+	if (*format == '%' && *(format + 1) == 0)
+		exit(60);
+
 	va_start(ap, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
@@ -32,7 +37,7 @@ int _printf(const char *format, ...)
 					str = "(null)";
 				while (str)
 					str_len++;
-				len += write(1, str, strlen);
+				len += write(1, str, str_len);
 			}
 			if (format[i] == '%')
 			{
