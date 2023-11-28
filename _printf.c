@@ -4,7 +4,7 @@
 
 int _printf(const char *format, ...)
 {
-	int i, len = 0;
+	int i, len = 0, j = 0;
 	char ch;
 	char *str;
 	va_list ap;
@@ -28,7 +28,6 @@ int _printf(const char *format, ...)
 				str = va_arg(ap, char *);
 				if (str == NULL)
 					str = "(null)";
-				int j = 0;
 				while (str[j] != '\0')
 				{
 					len += write(1, &str[j], 1);
