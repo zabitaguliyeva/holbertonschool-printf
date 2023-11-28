@@ -8,7 +8,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, j;
+	int i, j, len = 0;
 	char ch;
 	char *str;
 	va_list ap;
@@ -19,6 +19,7 @@ int _printf(const char *format, ...)
 		for (; format[i] != '%' && format[i] != '\0'; i++)
 		{
 			write(1, &format[i], 1);
+			len++;
 		}
 		if (format[i] == '%')
 		{
@@ -27,12 +28,16 @@ int _printf(const char *format, ...)
 			{
 				ch = va_arg(ap, int);
 				write(1, &ch, 1);
+				len++;
 			}
 			if (format[i] == 's')
 			{
 				str = va_arg(ap, char *);
 				for (j = 0; str[j] != '\0'; j++)
+				{
 					write(1, &str[j], 1);
+					len++;
+				}
 			}
 		}
 	}
