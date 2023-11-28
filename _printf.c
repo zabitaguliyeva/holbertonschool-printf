@@ -35,8 +35,7 @@ int _printf(const char *format, ...)
                 str = va_arg(ap, char *);
                 if (str == NULL)
                 {
-                    write(1, "(null)", 6);
-                    len += 6;
+                    // Do nothing for NULL strings
                 }
                 else
                 {
