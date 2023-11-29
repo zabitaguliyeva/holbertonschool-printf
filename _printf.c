@@ -22,6 +22,10 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
+			if (format[i] == '\0')
+			{
+				return(-1);
+			}
 			if (format[i] == 'c')
 			{
 				ch = (char)va_arg(ap, int);
