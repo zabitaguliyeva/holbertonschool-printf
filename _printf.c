@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 			}
 			else if (format [i] == 's')
 			{
-				len += print_string(ap);
+				print_string(ap, &len);
 			}
 			else if (format [i] == '%')
 			{

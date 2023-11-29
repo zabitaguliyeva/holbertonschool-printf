@@ -6,20 +6,19 @@
  *
  * Return: 1
  */
-int print_string(va_list ap)
+int print_string(va_list ap, int *len)
 {
-	int j, s;
+	int j;
 	char *str;
 	str = va_arg(ap, char *);
 	if (str == NULL)
-	{
 		str = "(null)";
-		j = 0;
-	}
+
+	j = 0;
 	while (str[j] != '\0')
 	{
-		s = write(1, &str[j], 1);
+      		(*len) += write(1, &str[j], 1);
 		j++;
 	}
-	return (s);
+	return (*len);
 }

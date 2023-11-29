@@ -9,8 +9,6 @@
 int print_char(va_list ap)
 {
 	char ch = (char)va_arg(ap, int);
-	int k;
 
-	k = write(1,&ch, 1);
-	return (k);
+	return (write(1,&ch, 1));
 }
