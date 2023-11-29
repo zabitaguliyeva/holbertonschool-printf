@@ -47,11 +47,12 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				ch = '%';
+				i--;
+				/*ch = '%';
 				len += write(1, &ch, 1);
 				ch = format [i];
-				len += write(1, &ch, 1);
-			}
+				len += write(1, &ch, 1);*/
+			}		
 		}
 		else
 		{
