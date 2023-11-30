@@ -80,7 +80,7 @@ int _printf(const char *format, ...)
 				len += write(1, &ch, 1);
 				ch = format [i];
 				len += write(1, &ch, 1);
-			}		
+			}
 		}
 		else
 		{
