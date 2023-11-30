@@ -13,6 +13,7 @@ int print_string(va_list ap, int *len)
 {
 	int j;
 	char *str;
+
 	str = va_arg(ap, char *);
 	if (str == NULL)
 		str = "(null)";
@@ -35,7 +36,7 @@ int print_char(va_list ap)
 {
 	char ch = (char)va_arg(ap, int);
 
-	return (write(1,&ch, 1));
+	return (write(1, &ch, 1));
 }
 /**
  * _printf - Is a function that produces output according to a format.
@@ -58,18 +59,12 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			if (format[i] == '\0')
-			{
-				return(-1);
-			}
+				return (-1);
 			if (format[i] == 'c')
-			{
 				len += print_char(ap);
-			}
-			else if (format [i] == 's')
-			{
+			else if (format[i] == 's')
 				print_string(ap, &len);
-			}
-			else if (format [i] == '%')
+			else if (format[i] == '%')
 			{
 				ch = '%';
 				len += write(1, &ch, 1);
@@ -78,7 +73,7 @@ int _printf(const char *format, ...)
 			{
 				ch = '%';
 				len += write(1, &ch, 1);
-				ch = format [i];
+				ch = format[i];
 				len += write(1, &ch, 1);
 			}
 		}
