@@ -9,6 +9,6 @@ void print_int(va_list value, int *len);
 int print_int_string(char *s, int *len);
 char *_reverse(char *s, int n);
 char *_itoa(int value);
-int _abs(int n);
+unsigned int _abs(int n);
 
 #endif
