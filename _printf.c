@@ -4,9 +4,9 @@
 #include "main.h"
 
 /**
- * print_string - print char.
- * @list: va_list.
- *
+ * print_string - prints a char.
+ * @ap: va_list.
+ * @len: length of string.
  * Return: 1
  */
 int print_string(va_list ap, int *len)
@@ -28,7 +28,7 @@ int print_string(va_list ap, int *len)
 }
 /**
  * print_char - print char.
- * @list: va_list.
+ * @ap: va_list.
  *
  * Return: 1
  */
