@@ -1,16 +1,21 @@
 #include "main.h"
-#include "unistd.h"
+#include <unistd.h>
+#include <limits.h>
 
 unsigned int _abs(int n)
 {
-	
+	unsigned int i;
 	if (n < 0)
 	{
-		n = n * -1;
-		return (n);
+		i = n * -1;
+		return (i);
+	}
+	else
+	{
+		i = n;
 	}
 
-	return (n);
+	return (i);
 }
 
 char *_reverse(char *str, int n)
@@ -44,9 +49,17 @@ int print_int_string(char *s, int *len)
 char *_itoa(int value)
 {
 	char buffer[1024];
-	int n, i;
+	unsigned int n;
+	int i;
 
-	n = _abs(value);
+	if (value == INT_MIN)
+	{
+		n = (unsigned int)INT_MAX + 1;
+	}
+	else
+	{
+		n = _abs(value);
+	}
 
 	i = 0;
 	while (n)
