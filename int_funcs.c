@@ -8,7 +8,6 @@ unsigned int _abs(int n)
 	if (n < 0)
 	{
 		i = n * -1;
-		return (i);
 	}
 	else
 	{
