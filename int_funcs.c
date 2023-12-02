@@ -2,13 +2,17 @@
 #include <unistd.h>
 #include <limits.h>
 
+/**
+ * _abs - Gets the absolute value of a number.
+ * @n: Number.
+ * Return: Absolute value of n.
+ */
 unsigned int _abs(int n)
 {
 	unsigned int i;
 	if (n < 0)
 	{
 		i = n * -1;
-		return (i);
 	}
 	else
 	{
@@ -18,6 +22,12 @@ unsigned int _abs(int n)
 	return (i);
 }
 
+/**
+ * _reverse - Reverses a string.
+ * @str: Given string.
+ * @n: Length of string.
+ * Return: Reversed string.
+ */
 char *_reverse(char *str, int n)
 {
 	int i, temp;
@@ -33,6 +43,12 @@ char *_reverse(char *str, int n)
 	return (str);
 }
 
+/**
+ * print_int_string - Prints a string.
+ * @s: Given string.
+ * @len: Count of printed characters.
+ * Return: len.
+ */
 int print_int_string(char *s, int *len)
 {
 	int j = 0;
@@ -46,6 +62,11 @@ int print_int_string(char *s, int *len)
 	return (*len);
 }
 
+/**
+ * _itoa - Writes an integer into a string.
+ * @value: Int number.
+ * Return: Converted value.
+ */
 char *_itoa(int value)
 {
 	char buffer[1024];
