@@ -3,14 +3,6 @@
 #include <unistd.h>
 #include "main.h"
 
-void handle_percent(int *len)
-{
-	char ch;
-
-	ch = '%';
-	(*len) += write(1, &ch, 1);
-}
-
 /**
  * print_string - prints a char.
  * @ap: va_list.
@@ -89,7 +81,8 @@ int _printf(const char *format, ...)
 				print_int(ap, &len);
 			else if (format[i] == '%')
 			{
-				handle_percent(&len);
+				ch = '%';
+				len += write(1, &ch, 1);
 			}
 			else
 			{
