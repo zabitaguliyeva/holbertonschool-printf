@@ -3,6 +3,11 @@
 #include <unistd.h>
 #include "main.h"
 
+/**
+ * handle_percent - handles % character.
+ * @len: length of printed characters.
+ * Return: Void.
+ */
 void handle_percent(int *len)
 {
 	char ch;
