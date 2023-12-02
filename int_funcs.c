@@ -22,6 +22,12 @@ unsigned int _abs(int n)
 	return (i);
 }
 
+/**
+ * _reverse - Reverses a string.
+ * @str: Given string.
+ * @n: Length of string.
+ * Return: Reversed string.
+ */
 char *_reverse(char *str, int n)
 {
 	int i, temp;
@@ -37,6 +43,11 @@ char *_reverse(char *str, int n)
 	return (str);
 }
 
+/**
+ *
+ *
+ *
+ */
 int print_int_string(char *s, int *len)
 {
 	int j = 0;
