@@ -62,6 +62,11 @@ int print_int_string(char *s, int *len)
 	return (*len);
 }
 
+/**
+ * _itoa - Writes an integer into a string.
+ * @value: Int number.
+ * Return: Converted value.
+ */
 char *_itoa(int value)
 {
 	char buffer[1024];
