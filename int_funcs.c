@@ -2,6 +2,11 @@
 #include <unistd.h>
 #include <limits.h>
 
+/**
+ * _abs - Gets the absolute value of a number.
+ * @n: Number.
+ * Return: Absolute value of n.
+ */
 unsigned int _abs(int n)
 {
 	unsigned int i;
