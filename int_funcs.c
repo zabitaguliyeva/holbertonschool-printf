@@ -44,9 +44,10 @@ char *_reverse(char *str, int n)
 }
 
 /**
- *
- *
- *
+ * print_int_string - Prints a string.
+ * @s: Given string.
+ * @len: Count of printed characters.
+ * Return: len.
  */
 int print_int_string(char *s, int *len)
 {
