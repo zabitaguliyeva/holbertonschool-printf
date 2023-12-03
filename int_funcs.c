@@ -15,10 +15,7 @@ unsigned int _abs(int n)
 		i = n * -1;
 	}
 	else
-	{
 		i = n;
-
-	}
 
 	return (i);
 }
