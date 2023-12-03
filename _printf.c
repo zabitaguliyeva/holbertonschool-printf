@@ -3,6 +3,22 @@
 #include <unistd.h>
 #include "main.h"
 
+<<<<<<< HEAD
+=======
+/**
+ * handle_percent - handles % character.
+ * @len: length of printed characters.
+ * Return: Void.
+ */
+void handle_percent(int *len)
+{
+	char ch;
+
+	ch = '%';
+	*len += write(1, &ch, 1);
+}
+
+>>>>>>> 334643449e380dc8dd69975c24cec3e7974fb32b
 /**
  * print_string - prints a char.
  * @ap: va_list.
